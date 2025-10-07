@@ -1,0 +1,9 @@
+{
+  "name": "ben_portfolio",
+  "scripts": {
+    "start": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
