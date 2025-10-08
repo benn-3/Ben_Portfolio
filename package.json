@@ -1,7 +1,7 @@
 {
   "name": "ben_portfolio",
   "scripts": {
-    "start": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+    "start": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client -- --host\""
   },
   "dependencies": {
     "concurrently": "^9.2.1"
