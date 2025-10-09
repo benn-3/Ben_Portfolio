@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import './App.css';
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -10,23 +9,21 @@ import Contact from "./components/Contact";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         {/* Navbar */}
-        <nav className="bg-gray-900 text-white p-4 shadow-md">
-          <div className="container mx-auto flex justify-between items-center">
-            <div className="text-2xl font-bold">Ben Portfolio</div>
-            <ul className="flex space-x-6">
-              <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
-              <li><Link to="/about" className="hover:text-blue-400 transition">About</Link></li>
-              <li><Link to="/skills" className="hover:text-blue-400 transition">Skills</Link></li>
-              <li><Link to="/projects" className="hover:text-blue-400 transition">Projects</Link></li>
-              <li><Link to="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
-            </ul>
+        <nav className="flex justify-between items-center px-8 py-5 bg-gray-900 bg-opacity-80 shadow-lg sticky top-0 z-50">
+          <h1 className="text-2xl font-bold text-blue-400">Ben Portfolio</h1>
+          <div className="flex gap-6 text-lg">
+            <Link className="hover:text-blue-400 transition" to="/">Home</Link>
+            <Link className="hover:text-blue-400 transition" to="/about">About</Link>
+            <Link className="hover:text-blue-400 transition" to="/skills">Skills</Link>
+            <Link className="hover:text-blue-400 transition" to="/projects">Projects</Link>
+            <Link className="hover:text-blue-400 transition" to="/contact">Contact</Link>
           </div>
         </nav>
 
-        {/* Page Content */}
-        <main className="flex-1 container mx-auto p-6">
+        {/* Pages */}
+        <div className="flex-grow flex items-center justify-center">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -34,11 +31,11 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </main>
+        </div>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white p-4 text-center">
-          &copy; {new Date().getFullYear()} Ben Portfolio. All rights reserved.
+        <footer className="text-center py-4 bg-gray-900 text-gray-400 text-sm">
+          © 2025 Ben Portfolio. All rights reserved.
         </footer>
       </div>
     </Router>

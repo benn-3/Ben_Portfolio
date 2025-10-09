@@ -1,28 +1,37 @@
-// src/components/Projects.jsx
 import React from "react";
-import "../css/Projects.css";
+import profile from "../assets/ben.jpg";
 
-const projects = [
-  { title: "Portfolio Website", description: "My personal portfolio built with React and Tailwind.", link: "#" },
-  { title: "Task Manager", description: "A full-stack task management app using MERN.", link: "#" },
-  { title: "E-commerce App", description: "Online store project with cart functionality.", link: "#" },
-];
-
-const Projects = () => {
+const Home = () => {
   return (
-    <div className="projects min-h-screen p-10 bg-gray-100">
-      <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((proj, index) => (
-          <div key={index} className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-2xl font-semibold mb-2">{proj.title}</h3>
-            <p className="mb-4">{proj.description}</p>
-            <a href={proj.link} className="text-blue-500 hover:underline">View Project</a>
-          </div>
-        ))}
+    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-black px-6 md:px-20 text-center md:text-left gap-10">
+      
+      {/* Left: Image */}
+      <div className="flex justify-center md:justify-end w-full md:w-1/2">
+        <img
+          src={profile}
+          alt="Benny"
+          className="w-60 h-60 md:w-80 md:h-80 rounded-full border-4 border-blue-500 shadow-xl object-cover transform hover:scale-105 transition duration-500"
+        />
       </div>
-    </div>
+
+      {/* Right: Text */}
+      <div className="w-full md:w-1/2">
+        <h1 className="text-5xl md:text-6xl font-bold text-blue-400 mb-4 leading-tight">
+          Hi, I'm <span className="text-white">Benny 👋</span>
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          Full Stack Developer <br /> React • Node.js • MongoDB Enthusiast
+        </p>
+
+        <a
+          href="/projects"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg transition duration-300"
+        >
+          View Projects
+        </a>
+      </div>
+    </section>
   );
 };
 
-export default Projects;
+export default Home;
